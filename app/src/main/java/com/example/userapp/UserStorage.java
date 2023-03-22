@@ -27,7 +27,7 @@ public class UserStorage {
         userList.add(user);
     }
 
-    public void removeUser(int id){
-        userList.remove(id);
+    public void removeUser(int index){
+        userList.remove(index);
     }
 }

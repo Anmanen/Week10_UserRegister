@@ -1,7 +1,9 @@
 package com.example.userapp;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -31,7 +33,14 @@ public class UserListAdapter extends RecyclerView.Adapter<UserInfoHolder> {
         holder.name.setText(userList.get(position).getFirstName() +  " " + userList.get(position).getLastName());
         holder.field.setText(userList.get(position).getDegreeProgram());
         holder.emailAddress.setText(userList.get(position).getEmail());
+        holder.avatarImage.setImageResource(userList.get(position).getAvatar());
 
+        holder.removeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UserStorage.getInstance().removeUser(position);
+            }
+        });
     }
 
     @Override

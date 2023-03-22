@@ -8,11 +8,12 @@ public class User {
 
     private int avatar;
 
-    public User(String firstName, String lastName, String email, String degreeProgram) {
+    public User(String firstName, String lastName, String email, String degreeProgram, int avatar) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.degreeProgram = degreeProgram;
+        this.avatar = avatar;
     }
 
     public String getFirstName() {
@@ -29,5 +30,9 @@ public class User {
 
     public String getDegreeProgram() {
         return degreeProgram;
+    }
+
+    public int getAvatar() {
+        return avatar;
     }
 }
