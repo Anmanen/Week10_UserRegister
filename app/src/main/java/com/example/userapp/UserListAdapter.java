@@ -3,6 +3,7 @@ package com.example.userapp;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserInfoHolder> {
         holder.avatarImage.setImageResource(userList.get(position).getAvatar());
         if (userList.get(position).getDegrees() != null){
             ArrayList<String> degreeList = userList.get(position).getDegrees();
+            holder.degree.addView(makeHeaderTextView("Suoritetut tutkinnot: "));
             for (String s : degreeList){
                 holder.degree.addView(makeDegreeTextView(s));
             }
@@ -57,8 +59,16 @@ public class UserListAdapter extends RecyclerView.Adapter<UserInfoHolder> {
         return userList.size();
     }
 
+    public TextView makeHeaderTextView(String header){
+        int id = 1;
+        TextView htw = new TextView(context);
+        htw.setText(header);
+        htw.setId(id++);
+        htw.setTypeface(null, Typeface.ITALIC);
+        return htw;
+    }
     public TextView makeDegreeTextView(String degreeName){
-        int id = 0;
+        int id = 100;
         TextView tw = new TextView(context);
         tw.setText(degreeName);
         tw.setId(id++);
