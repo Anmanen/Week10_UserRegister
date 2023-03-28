@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="5dp"
-        android:text="Valitse opiskeluala: "
+        android:text="Opiskeluala: "
         app:layout_constraintBottom_toTopOf="@+id/rgChoices"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
@@ -71,25 +71,25 @@
         <RadioButton
             android:id="@+id/rbElectrical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:text="Sähkötekniikka" />
 
         <RadioButton
             android:id="@+id/rbProduction"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:text="Tuotantotalous" />
 
         <RadioButton
             android:id="@+id/rbComputational"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:text="Laskennallinen tekniikka" />
 
         <RadioButton
             android:id="@+id/rbComputer"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:text="Tietotekniikka" />
 
     </RadioGroup>
@@ -111,18 +111,19 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="20dp"
         android:contextClickable="false"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rgChoices">
 
         <RadioButton
             android:id="@+id/rbFemale"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/female" />
 
         <RadioButton
             android:id="@+id/rbMale"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/male" />
     </RadioGroup>
@@ -131,12 +132,50 @@
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="132dp"
         android:onClick="addUser"
         android:text="Lisää käyttäjä"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rgImages" />
+
+    <TextView
+        android:id="@+id/txtSelectDegree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Suoritetut tutkinnot: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgImages" />
+
+    <LinearLayout
+        android:id="@+id/lldegreeCheckboxes"
+        android:layout_width="200dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgImages">
+
+        <CheckBox
+            android:id="@+id/cbBachelor"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Kandidaatti " />
+
+        <CheckBox
+            android:id="@+id/cbMaster"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Diplomi-insinööri" />
+
+        <CheckBox
+            android:id="@+id/cbDoctor"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Tekniikan tohtori" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
