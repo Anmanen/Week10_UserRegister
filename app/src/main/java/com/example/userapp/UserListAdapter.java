@@ -37,7 +37,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserInfoHolder> {
         holder.field.setText(userList.get(position).getDegreeProgram());
         holder.emailAddress.setText(userList.get(position).getEmail());
         holder.avatarImage.setImageResource(userList.get(position).getAvatar());
-        if (userList.get(position).getDegrees() != null){
+        if (userList.get(position).getDegrees().size() != 0){
             ArrayList<String> degreeList = userList.get(position).getDegrees();
             holder.degree.addView(makeHeaderTextView("Suoritetut tutkinnot: "));
             for (String s : degreeList){
